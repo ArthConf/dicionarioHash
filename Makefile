@@ -1,6 +1,6 @@
 TrabalhoHash: clean
 	@echo "Compilando o programa TrabalhoHash"
-	@gcc  TrabalhoHash.c -o TrabalhoHash
+	@gcc  HashDicionario.c HashDicionario.h -o TrabalhoHash
 	@chmod +x TrabalhoHash
 	@./TrabalhoHash
 	@echo "===================================================================="
