@@ -7,6 +7,8 @@ typedef struct HashStruct {
     LinkedList hashes[MAX];
     int size;
     int teste;
+    int num;
+
 }HashStruct;
 
 void initHash(HashStruct *hashStruct);
