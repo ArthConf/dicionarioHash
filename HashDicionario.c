@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include "HashDicionario.h"
 
 
 void initHash(HashStruct *hashStruct){
@@ -54,4 +54,15 @@ void* removeKey(HashStruct *hashStruct, char *key, compare equal){
     if(result!=NULL) hashStruct->size--;
     return result;
 }
+
+void showHashStruct(HashStruct *hashStruct){
+    printf("Quantidade de elementos na tabela hash:", hashStruct->size );
+
+    for(int i=0; i < MAX; i++){
+        printf("Hash %d tem %d elementos:", i, hashStruct->hashes[i].size);
+        show(&hashStruct->hashes[i], print);
+        printf(\n);
+    }
+}
+
 
