@@ -271,8 +271,8 @@ int hash2_3(char *key) {
 
 
 void graficoEspalhamento1(const HashStruct1 *hashStruct, const char *filename) {
-    FILE *imageFile = fopen(filename, "w");
-    if (imageFile) {
+    FILE *graficoPlotado = fopen(filename, "w");
+    if (graficoPlotado) {
         int max_density = 0;
 
         // Encontra a densidade máxima na tabela
@@ -282,9 +282,9 @@ void graficoEspalhamento1(const HashStruct1 *hashStruct, const char *filename) {
         }
 
         // Escreve o cabeçalho PPM no arquivo
-        fprintf(imageFile, "P3\n");
-        fprintf(imageFile, "32 32\n"); // Largura  x Altura 
-        fprintf(imageFile, "255\n");   // Valor máximo de cor
+        fprintf(graficoPlotado, "P3\n");
+        fprintf(graficoPlotado, "32 32\n"); // Largura  x Altura 
+        fprintf(graficoPlotado, "255\n");   // Valor máximo de cor
 
         for (int i = 0; i < 32; i++) {
             for (int j = 0; j < 32; j++) {
@@ -296,11 +296,11 @@ void graficoEspalhamento1(const HashStruct1 *hashStruct, const char *filename) {
                 int blue = 0;
 
                 // Escreve o valor de cor no arquivo PPM
-                fprintf(imageFile, "%d %d %d ", red, green, blue);
+                fprintf(graficoPlotado, "%d %d %d ", red, green, blue);
             }
         }
 
-        fclose(imageFile);
+        fclose(graficoPlotado);
         printf("Imagem da tabela Hash gerada: %s\n", filename);
     } else {
         printf("Erro ao criar o arquivo de imagem PPM.\n");
@@ -308,8 +308,8 @@ void graficoEspalhamento1(const HashStruct1 *hashStruct, const char *filename) {
 }
 
 void graficoEspalhamento2(const HashStruct2 *hashStruct, const char *filename) {
-    FILE *imageFile = fopen(filename, "w");
-    if (imageFile) {
+    FILE *graficoPlotado = fopen(filename, "w");
+    if (graficoPlotado) {
         int max_density = 0;
 
         // Encontra a densidade máxima na tabela
@@ -319,9 +319,9 @@ void graficoEspalhamento2(const HashStruct2 *hashStruct, const char *filename) {
         }
 
         // Escreve o cabeçalho PPM no arquivo
-        fprintf(imageFile, "P3\n");
-        fprintf(imageFile, "32 32\n"); // Largura  x Altura 
-        fprintf(imageFile, "255\n");   // Valor máximo de cor
+        fprintf(graficoPlotado, "P3\n");
+        fprintf(graficoPlotado, "32 32\n"); // Largura  x Altura 
+        fprintf(graficoPlotado, "255\n");   // Valor máximo de cor
 
         for (int i = 0; i < 32; i++) {
             for (int j = 0; j < 32; j++) {
@@ -333,11 +333,11 @@ void graficoEspalhamento2(const HashStruct2 *hashStruct, const char *filename) {
                 int blue = 0;
 
                 // Escreve o valor de cor no arquivo PPM
-                fprintf(imageFile, "%d %d %d ", red, green, blue);
+                fprintf(graficoPlotado, "%d %d %d ", red, green, blue);
             }
         }
 
-        fclose(imageFile);
+        fclose(graficoPlotado);
         printf("Imagem da tabela Hash gerada: %s\n", filename);
     } else {
         printf("Erro ao criar o arquivo de imagem PPM.\n");
@@ -345,8 +345,8 @@ void graficoEspalhamento2(const HashStruct2 *hashStruct, const char *filename) {
 }
 
 void graficoEspalhamento3(const HashStruct3 *hashStruct, const char *filename) {
-    FILE *imageFile = fopen(filename, "w");
-    if (imageFile) {
+    FILE *graficoPlotado = fopen(filename, "w");
+    if (graficoPlotado) {
         int max_density = 0;
 
         // Encontra a densidade máxima na tabela
@@ -356,9 +356,9 @@ void graficoEspalhamento3(const HashStruct3 *hashStruct, const char *filename) {
         }
 
         // Escreve o cabeçalho PPM no arquivo
-        fprintf(imageFile, "P3\n");
-        fprintf(imageFile, "32 32\n"); // Largura  x Altura 
-        fprintf(imageFile, "255\n");   // Valor máximo de cor
+        fprintf(graficoPlotado, "P3\n");
+        fprintf(graficoPlotado, "32 32\n"); // Largura  x Altura 
+        fprintf(graficoPlotado, "255\n");   // Valor máximo de cor
 
         for (int i = 0; i < 32; i++) {
             for (int j = 0; j < 32; j++) {
@@ -370,11 +370,10 @@ void graficoEspalhamento3(const HashStruct3 *hashStruct, const char *filename) {
                 int blue = 0;
 
                 // Escreve o valor de cor no arquivo PPM
-                fprintf(imageFile, "%d %d %d ", red, green, blue);
+                fprintf(graficoPlotado, "%d %d %d ", red, green, blue);
             }
         }
-
-        fclose(imageFile);
+        fclose(graficoPlotado);
         printf("Imagem da tabela Hash gerada: %s\n", filename);
     } else {
         printf("Erro ao criar o arquivo de imagem PPM.\n");
