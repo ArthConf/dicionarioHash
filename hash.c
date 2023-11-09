@@ -7,7 +7,6 @@
 void initHash1(HashStruct1 *hashStruct) {
     log_trace("Entrando em initHash");
     for (int i=0;i<MAX;i++) {
-        //chamando init de DoublyLinkedList para inicializar cada lista do vetor
         log_debug("Inicializando Lista do Hash %d", i);
         init(&(hashStruct->hashes[i]));
     }
@@ -18,7 +17,6 @@ void initHash1(HashStruct1 *hashStruct) {
 void initHash2(HashStruct2 *hashStruct) {
     log_trace("Entrando em initHash");
     for (int i=0;i<MAX2;i++) {
-        //chamando init de DoublyLinkedList para inicializar cada lista do vetor
         log_debug("Inicializando Lista do Hash %d", i);
         init(&(hashStruct->hashes[i]));
     }
@@ -29,14 +27,12 @@ void initHash2(HashStruct2 *hashStruct) {
 void initHash3(HashStruct3 *hashStruct) {
     log_trace("Entrando em initHash");
     for (int i=0;i<MAX3;i++) {
-        //chamando init de DoublyLinkedList para inicializar cada lista do vetor
         log_debug("Inicializando Lista do Hash %d", i);
         init(&(hashStruct->hashes[i]));
     }
     hashStruct->size = 0;
     log_trace("Saindo de initHash");
 }
-
 
 bool comparador(void* data_1,void* data_2){
     if(strcmp (data_1,data_2)==0) return true;
@@ -46,9 +42,7 @@ bool comparador(void* data_1,void* data_2){
 int hash1_1(char *key) {
     log_trace("Entrando em hash");
     int sum = 0;
-    // percorremos todos os caracteres da string passada
     for (int i = 0; key[i]!=0;i++) {
-         //acumulamos os códigos ascii de cada letra com um peso
         sum+=key[i]*(i+1);
     }
     log_debug("key: %s", key);
@@ -56,30 +50,23 @@ int hash1_1(char *key) {
     int hashvalue = sum%MAX;
     log_debug("Hash: %d", hashvalue);
     log_trace("Saindo de hash");
-    return hashvalue; //retorna o resto da divisão
+    return hashvalue; 
 }
+
 int hash1_2(char *key) {
     log_trace("Entrando em hash");
     int sum = 0;
-    // percorremos todos os caracteres da string passada
     for (int i = 0; key[i]!=0;i++) {
-         //acumulamos os códigos ascii de cada letra com um peso
         sum+=key[i]*(i+1);
     }
-    log_debug("key: %s", key);
-    log_debug("sum: %d", sum);
     int hashvalue = sum%MAX2;
-    log_debug("Hash: %d", hashvalue);
-    log_trace("Saindo de hash");
-    return hashvalue; //retorna o resto da divisão
+    return hashvalue;
 }
 
 int hash1_3(char *key) {
     log_trace("Entrando em hash");
     int sum = 0;
-    // percorremos todos os caracteres da string passada
     for (int i = 0; key[i]!=0;i++) {
-         //acumulamos os códigos ascii de cada letra com um peso
         sum+=key[i]*(i+1);
     }
     log_debug("key: %s", key);
@@ -94,9 +81,7 @@ int put1_1(HashStruct1 *hashStruct, char *key, void *data, compare equal)  {
     log_trace("Entrando em put");
     log_info("Adicionando novo elemento no Hash");
     if (!containsKey1_1(hashStruct, key, equal)) {
-        //adiciona na fila que está na posição devolvida pela função hash
         int res = enqueue(&hashStruct->hashes[hash1_1(key)],data);
-        //incrementa a qtde de elementos baseado na quantidade inserida por enqueue
         hashStruct->size+=res;
         return res;
     }
@@ -108,9 +93,7 @@ int put1_2(HashStruct2 *hashStruct, char *key, void *data, compare equal)  {
     log_trace("Entrando em put");
     log_info("Adicionando novo elemento no Hash");
     if (!containsKey1_2(hashStruct, key, equal)) {
-        //adiciona na fila que está na posição devolvida pela função hash
         int res = enqueue(&hashStruct->hashes[hash1_2(key)],data);
-        //incrementa a qtde de elementos baseado na quantidade inserida por enqueue
         hashStruct->size+=res;
         return res;
     }
@@ -122,9 +105,7 @@ int put1_3(HashStruct3 *hashStruct, char *key, void *data, compare equal)  {
     log_trace("Entrando em put");
     log_info("Adicionando novo elemento no Hash");
     if (!containsKey1_3(hashStruct, key, equal)) {
-        //adiciona na fila que está na posição devolvida pela função hash
         int res = enqueue(&hashStruct->hashes[hash1_3(key)],data);
-        //incrementa a qtde de elementos baseado na quantidade inserida por enqueue
         hashStruct->size+=res;
         return res;
     }

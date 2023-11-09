@@ -109,14 +109,14 @@ void main () {
     }
 
     //Tabelas 1
-    graficoEspalhamento1(&hashing1_1, "TabelaHash1_1.ppm");//Plota o gráfico de espalhamento da Tabela Hash 1 de tamanho 1024
-    graficoEspalhamento2(&hashing1_2, "TabelaHash1_2.ppm");//Plota o gráfico de espalhamento da Tabela Hash 1 de tamanho 512
-    graficoEspalhamento3(&hashing1_3, "TabelaHash1_3.ppm");//Plota o gráfico de espalhamento da Tabela Hash 1 de tamanho 256
+    graficoEspalhamento1(&hashing1_1, "TabelaHash1_1024.ppm");//Plota o gráfico de espalhamento da Tabela Hash 1 de tamanho 1024
+    graficoEspalhamento2(&hashing1_2, "TabelaHash1_512.ppm");//Plota o gráfico de espalhamento da Tabela Hash 1 de tamanho 512
+    graficoEspalhamento3(&hashing1_3, "TabelaHash1_256.ppm");//Plota o gráfico de espalhamento da Tabela Hash 1 de tamanho 256
 
     //Tabelas 2
-    graficoEspalhamento1(&hashing2_1, "TabelaHash2_1.ppm");//Plota o gráfico de espalhamento da Tabela Hash 2 de tamanho 1024
-    graficoEspalhamento2(&hashing2_2, "TabelaHash2_2.ppm");//Plota o gráfico de espalhamento da Tabela Hash 2 de tamanho 512
-    graficoEspalhamento3(&hashing2_3, "TabelaHash2_3.ppm");//Plota o gráfico de espalhamento da Tabela Hash 2 de tamanho 256
+    graficoEspalhamento1(&hashing2_1, "TabelaHash2_1024.ppm");//Plota o gráfico de espalhamento da Tabela Hash 2 de tamanho 1024
+    graficoEspalhamento2(&hashing2_2, "TabelaHash2_512.ppm");//Plota o gráfico de espalhamento da Tabela Hash 2 de tamanho 512
+    graficoEspalhamento3(&hashing2_3, "TabelaHash2_256.ppm");//Plota o gráfico de espalhamento da Tabela Hash 2 de tamanho 256
 
     fclose (hash2_3);
 }
